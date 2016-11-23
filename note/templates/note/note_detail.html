@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        <div class="post">
+            {% if note.created_date %}
+                <div class="date">
+                    {{ post.created_date }}
+                </div>
+            {% endif %}
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.description|linebreaksbr }}</p>
+        </div>
+    {% endblock %}

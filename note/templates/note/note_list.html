@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a href="{% url 'add_new' %}" class="top-menu">+</a>
+    {% for note in notes %}
+        <div>
+            <a class="btn btn-default" href="{% url 'note_edit' pk=note.pk %}">Edit</a>
+            <a class="btn btn-default" href="{% url 'note_delete' pk=note.pk %}">Delete</a>
+
+            <p>published: {{ note.created_date }}</p>
+            <h1><a href="{% url 'note_detail' pk=note.pk %}">{{ note.title }}</a></h1>
+            <p>{{ note.description|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
