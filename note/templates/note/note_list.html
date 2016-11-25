@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
     <a href="{% url 'add_new' %}" class="top-menu">+</a>
-    {% for note in notes %}
-        <div>
-            <a class="btn btn-default" href="{% url 'note_edit' pk=note.pk %}">Edit</a>
-            <a class="btn btn-default" href="{% url 'note_delete' pk=note.pk %}">Delete</a>
 
-            <p>published: {{ note.created_date }}</p>
-            <h1><a href="{% url 'note_detail' pk=note.pk %}">{{ note.title }}</a></h1>
-            <p>{{ note.description|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
+    <div class="row medium-8 large-7 columns">
+
+        {% for note in notes %}
+
+              <div class="blog-post">
+                  <h3>{{ note.title }} <small>{{ note.created_date }}</small></h3>
+                  <img class="thumbnail" src="http://placehold.it/850x350">
+                  <p>{{ note.description|linebreaksbr }}</p>
+                  <div class="callout">
+                  <ul class="menu simple">
+                      <li><a class="btn btn-default" href="{% url 'note_edit' pk=note.pk %}">Редактировать</a></li>
+                      <li><a class="btn btn-default" href="{% url 'note_delete' pk=note.pk %}">Удалить</a></li>
+                  </ul>
+                </div>
+              </div>
+
+        {% endfor %}
+
+    </div>
 {% endblock content %}

@@ -7,7 +7,8 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/login/')
 def note_list(request):
-    notes = Note.objects.all().order_by('created_date')
+    user = request.user
+    notes = Note.objects.filter(author=user).order_by('created_date')
     return render(request, 'note/note_list.html', {'notes': notes})
 
 
