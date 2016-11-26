@@ -37,3 +37,8 @@ button{
     padding-left: 0;
     width: 100%;
 }
+
+.list-img{
+    width: 850px;
+    height: 350px;
+}

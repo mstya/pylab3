@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 
     {% block content %}
-        <h1>Удаление заметки</h1>
-        <h2>Вы уверены что хотите удалить заметку?</h2>
 
         <form method="POST" class="note-form">{% csrf_token %}
-            <label>{{ note.title }}</label>
-            <label>{{ note.description }}</label>
-            <button type="submit" class="save btn btn-default">Delete</button>
+            <div class="row">
+                <div class="large-12 columns">
+                    <a href="{% url 'note_list' %}">Назад</a>
+                    <h1>Удаление заметки</h1>
+                    <h2>Вы уверены что хотите удалить заметку?</h2>
+
+                    <label>{{ note.title }}</label>
+                    <label>{{ note.description }}</label>
+                    <button type="submit" class="save btn btn-default">Delete</button>
+                </div>
+            </div>
         </form>
     {% endblock %}

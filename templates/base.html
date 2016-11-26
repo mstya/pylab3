@@ -13,14 +13,19 @@
             <div class="top-bar">
                 <div class="top-bar-left">
                     <ul class="menu">
-                        <li class="menu-text">Note App</li>
-
+                        <li class="menu-text">
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'note_list' %}">Note App</a>
+                            {%  else %}
+                                <a href="{% url 'login' %}">Note App</a>
+                            {% endif %}
+                        </li>
 
                         {% if user.is_authenticated %}
                         <li><a href="{% url 'logout' %}">Выход</a></li>
                         {% else %}
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Register</a></li>
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">Register</a></li>
                         {% endif %}
 
                     </ul>

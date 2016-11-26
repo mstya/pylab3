@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 def note_list(request):
     user = request.user
     notes = Note.objects.filter(author=user).order_by('created_date')
+    #notes = Note.objects.all()
     return render(request, 'note/note_list.html', {'notes': notes})
 
 
@@ -20,16 +21,36 @@ def note_detail(request, pk):
 
 @login_required(login_url='/login/')
 def add_new(request):
-    if request.method == "POST":
-        form = NoteForm(request.POST)
+    # if request.method == "POST":
+        #form = NoteForm(request.POST)
+        # form = NoteForm(request.POST, request.FILES)
+        # if form.is_valid():
+        #     note = form.save(commit=False)
+        #     note.image = request.FILES['image']
+        #     note.author = request.user
+        #     note.created_date = timezone.now()
+        #     note.save()
+        #     return redirect('note_detail', pk=note.pk)
+
+    # else:
+    #     form = NoteForm()
+    #     form.isAdd = True
+    # Handle file upload
+    if request.method == 'POST':
+        form = NoteForm(request.POST, request.FILES)
         if form.is_valid():
-            note = form.save(commit=False)
-            note.author = request.user
-            note.created_date = timezone.now()
-            note.save()
-            return redirect('note_detail', pk=note.pk)
+            newdoc = Note(docfile=request.FILES['docfile'])
+            newdoc.title = request.POST['title']
+            newdoc.description = request.POST['description']
+            newdoc.author = request.user
+            newdoc.created_date = timezone.now()
+            newdoc.save()
+
+            # Redirect to the document list after POST
+            return redirect('note_detail', pk=newdoc.pk)
     else:
-        form = NoteForm()
+        form = NoteForm()  # A empty, unbound form
+        form.isAdd = True
     return render(request, 'note/add_new.html', {'form': form})
 
 
@@ -40,12 +61,14 @@ def note_edit(request, pk):
         form = NoteForm(request.POST, instance=note)
         if form.is_valid():
             note = form.save(commit=False)
-            note.author = request.user
-            note.created_date = timezone.now()
             note.save()
             return redirect('note_detail', pk=note.pk)
     else:
-        form = NoteForm(instance=note)
+        form = NoteForm()
+        form.title = note.title
+        form.description = note.description
+        form.docfile = note.docfile
+        form.isAdd = False
     return render(request, 'note/add_new.html', {'form': form})
 
 

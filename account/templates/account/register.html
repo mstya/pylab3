@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-
-    <form action="" method="post">
-      {% csrf_token %}
-      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
-      {{ form.as_p }}
-      <button type="submit">Зарегистрироваться</button>
-    </form>
-
+    <div class="large-3 large-centered columns">
+        <div class="login-box">
+            <div class="row">
+                <div class="large-12 columns">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+                        {{ form.as_p }}
+                        <button type="submit">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
