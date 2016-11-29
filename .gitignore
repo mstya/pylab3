@@ -1,5 +1,6 @@
 *.pyc
 __pycache__
 NotesEnv
+media
 db.sqlite3
 .DS_Store

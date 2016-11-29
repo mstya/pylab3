@@ -1,8 +1,19 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy
+from django.views.generic import UpdateView
+
 from .models import Note
 from .forms import NoteForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+
+
+class NoteUpdate(UpdateView):
+    model = Note
+    fields = ['title', 'description', 'docfile']
+    template_name = "note/add_new.html"
+    success_url = reverse_lazy('note_list')
+
 
 
 @login_required(login_url='/login/')
@@ -58,9 +69,11 @@ def add_new(request):
 def note_edit(request, pk):
     note = get_object_or_404(Note, pk=pk)
     if request.method == "POST":
-        form = NoteForm(request.POST, instance=note)
+        form = NoteForm(request.POST)
         if form.is_valid():
-            note = form.save(commit=False)
+            note.docfile=request.FILES['docfile']
+            note.title = request.POST['title']
+            note.description = request.POST['description']
             note.save()
             return redirect('note_detail', pk=note.pk)
     else:
