@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4122b1c1-68be-4f1b-aeb5-aa6c33bcd733" name="Default" comment="added proj without css">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NotesApp/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NotesApp/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NotesApp/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NotesApp/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NotesApp/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NotesApp/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NotesApp/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/documents/2016/11/26/20140602_538c41a460428.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/documents/2016/11/26/avatar-neytiri-riding-gallery-image.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/documents/2016/11/26/Ð_Ð²Ð_Ñ_Ð_Ñ_avatar_film_movies_ultra_3840x2160_hd-wallpaper-31383.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/documents/2016/11/26/Снимок_экрана_2016-11-21_в_21.38.51.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/documents/2016/11/26/Снимок_экрана_2016-11-21_в_21.38.51_GcUDMue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/documents/2016/11/26/Снимок_экрана_2016-11-21_в_21.38.51_O6WlSba.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/documents/2016/11/26/Снимок_экрана_2016-11-21_в_21.38.51_VoPb36a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/documents/2016/11/26/Снимок_экрана_2016-11-21_в_21.38.51_h61fmB1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/documents/2016/11/26/Снимок_экрана_2016-11-21_в_21.38.51_t3jmL2r.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lab3Notes/settings.py" afterPath="$PROJECT_DIR$/Lab3Notes/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/note/templates/note/add_new.html" afterPath="$PROJECT_DIR$/note/templates/note/add_new.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/note/templates/note/note_delete.html" afterPath="$PROJECT_DIR$/note/templates/note/note_delete.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/note/urls.py" afterPath="$PROJECT_DIR$/note/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/note/views.py" afterPath="$PROJECT_DIR$/note/views.py" />
     </list>
     <ignored path="Lab3Notes.iws" />
     <ignored path=".idea/workspace.xml" />
